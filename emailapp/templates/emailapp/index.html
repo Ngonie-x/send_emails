@@ -1,0 +1,32 @@
+{% extends 'emailapp/base.html' %}
+
+{% block content %}
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+                <strong>{{ message|safe }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    <div class="container">
+        <div class="container d-flex justify-content-center">
+            <h1 class="display-4 text-light p-4">Send Emails Without Opening Gmail!</h1>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <a class='btn btn-primary' href="{%url 'emailapp:email_form'%}">Get Started</a>
+        </div>
+        <div class="container m-4">
+            <p class="text-white">Tired of getting pulled in by the gmail traffic?
+            You're not alone, everytime I open gmail I find myself scrolling for hour when really I just wanted to send 1 email.
+            Click the button above to get your freedom back!</p>
+        </div>
+    </div>
+{% endblock content %}
+        
